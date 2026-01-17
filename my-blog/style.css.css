@@ -1,0 +1,186 @@
+/* Color Palette */
+:root {
+    --primary: #2c3e50; /* Dark Slate Blue - Professional */
+    --secondary: #34495e;
+    --accent: #e67e22; /* Small pop of color */
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* General Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif; /* Classic Legal Font Style */
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Header */
+.hero {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
+}
+
+/* Layout Grid */
+.main-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Content takes 2 parts, Bio takes 1 */
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* About Section */
+.intro-box {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent); /* Orange line accent */
+}
+
+.intro-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.intro-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* Sidebar / Quick Bio */
+.bio-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.bio-card h3 {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.bio-list {
+    list-style: none;
+}
+
+.bio-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.bio-list i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-right: 15px;
+    margin-top: 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.bio-list div {
+    display: flex;
+    flex-direction: column;
+}
+
+.bio-list strong {
+    font-size: 0.9rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bio-list span {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary);
+    color: #bdc3c7;
+    margin-top: auto;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr; /* Stack everything on mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
